@@ -1,1 +1,22 @@
+txt1 = parseInt(prompt("Favor de ingresar el valor de a: "));
+txt1 = parseInt(prompt("Favor de ingresar el valor de b: "));
+txt1 = parseInt(prompt("Favor de ingresar el valor de c: "));
 
+    var discriminante = txt2 * txt2 - (4 * txt1 * txt3);
+        if( txt1 == 0 && txt2 == 0 && txt3 == 0){
+            console.log("Coeficientes nulos");
+
+                }else if( discriminante == 0){
+                    x = (-1) * txt2 / (2 * txt1);
+                    console.log("Existe una raiz doble de valor: %d", x);
+
+                }else if( discriminante > 0){
+                        discriminante = Math.sqrt(discriminante);
+                        x = ( ((-1) * txt2 + discriminante) / 2 * txt1 ).toFixed(2);
+                        y = ( ((-1) * txt2 - discriminante) / 2 * txt1 ).toFixed(2);
+                        console.log("Las raices son: %d, %d", x,y);      
+                }else{
+                    x = (-1) * txt2 / (2 * txt1);
+                    var rCompleja = Math.sqrt( ((-1) * discriminante) / (2* txt1) );
+                    console.log("Las raices son imaginarias: %d + %di, %d - %di", x,rCompleja,x,rCompleja);
+                }
