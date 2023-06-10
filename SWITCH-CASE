@@ -1,0 +1,41 @@
+console.clear();
+
+const GAME_OPTIONS = ["PIEDRA", "PAPEL", "TIJERA"];
+
+/**
+ * Función que ejecuta el juego de piedra, papel y tijera
+ * @param Jugador1 Opción del jugador1
+ * @param Jugador2 Opcion del jugador2
+ */
+function game(Jugador1, Jugador2) {
+  if (!GAME_OPTIONS.includes(Jugador1) | !GAME_OPTIONS.includes(Jugador2))
+    throw new Error("Opción de juego no válida");
+
+  if (Jugador1 === Jugador2) return "Empate";
+
+  switch (Jugador1) {
+    case "PIEDRA":
+      switch (Jugador2) {
+        case "PAPEL":
+          return "Jugador 2 gana";
+        default:
+          return "Jugador 1 gana";
+      }
+    case "PAPEL":
+      switch (Jugador2) {
+        case "TIJERA":
+          return "Jugador 2 gana";
+        default:
+          return "Jugador 1 gana";
+      }
+    case "TIJERA":
+      switch (Jugador2) {
+        case "PIEDRA":
+          return "Jugador 2 gana";
+        default:
+          return "Jugador 1 gana";
+      }
+  }
+}
+
+console.log(game("TIJERA", "PAPEL"));
