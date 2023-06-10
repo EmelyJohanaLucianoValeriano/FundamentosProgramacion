@@ -1,1 +1,2 @@
-
+get = objeto[nombre_propiedad];
+objeto[nombre_propiedad] = set;
